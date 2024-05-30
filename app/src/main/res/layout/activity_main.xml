@@ -14,22 +14,22 @@
         app:selectionRequired="true"
         app:singleSelection="true">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonMale"
             style="@style/ButtonGenderStyle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:drawableTop="@drawable/baseline_male_48"
+            android:drawableTop="@drawable/baseline_male_32"
             android:text="Male" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonFemale"
             style="@style/ButtonGenderStyle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:drawableTop="@drawable/baseline_female_48"
+            android:drawableTop="@drawable/baseline_female_32"
             android:text="Female" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
@@ -53,13 +53,59 @@
 
         <com.google.android.material.slider.Slider
             android:id="@+id/sliderHeight"
+            style="@style/SliderStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:stepSize="1.0"
             android:valueFrom="50.0"
-            android:valueTo="250.0"
-            app:tickVisible="false" />
+            android:valueTo="250.0" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextViewInfoStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Weight" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextViewInfoStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Age" />
+        </LinearLayout>
 
     </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textViewResult"
+        style="@style/TextViewResultStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The BMI index is: ???" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate" />
 
 </LinearLayout>
