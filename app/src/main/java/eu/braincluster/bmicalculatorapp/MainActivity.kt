@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity()
     {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater);
-        setContentView(binding.getRoot());
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.getRoot())
 
         // Height
         binding.textViewHeight.text = "${height.toString()} cm"
