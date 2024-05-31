@@ -14,24 +14,6 @@ class MainActivity : AppCompatActivity()
     private var height = 176
     private var age = 25
 
-    private fun getBmiResult(): String
-    {
-        var result: String
-
-        if (height > 0)
-        {
-            val heightMeter = height / 100.0
-            val bmiIndex = weight / (heightMeter * heightMeter)
-            result = String.format("The BMI index is: %.3f", bmiIndex)
-        }
-        else
-        {
-            result = "Cannot calculate the index!"
-        }
-
-        return result
-    }
-
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -89,7 +71,9 @@ class MainActivity : AppCompatActivity()
         // Calculate
         binding.buttonCalculate.setOnClickListener {
             height = binding.sliderHeight.value.toInt()
-            binding.textViewResult.text = getBmiResult()
+
+            val person = Person(weight, height)
+            binding.textViewResult.text = String.format("The BMI index is: %.3f", person.getBmiIndex())
         }
     }
 }
